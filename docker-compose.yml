@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  router:
+    restart: always
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./config/:/etc/nginx/conf.d/
+      - ./ssl/:/etc/ssl/
+      
+networks:
+  docker-access-route-network:
+    driver: bridge
