@@ -10,7 +10,8 @@ services:
     volumes:
       - ./config/:/etc/nginx/conf.d/
       - ./ssl/:/etc/ssl/
+      - ./logs/:/var/log/nginx/
       
 networks:
   docker-access-route-network:
-    driver: bridge
+    external: true

@@ -2,7 +2,7 @@
 networks:
   default:
     external:
-      name: my-pre-existing-network
+      name: docker-access-route-network
 ```
 
 ```
