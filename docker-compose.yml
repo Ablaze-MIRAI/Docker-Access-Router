@@ -1,17 +1,21 @@
 version: "3"
 
 services:
-  router:
-    restart: always
+  reverse_proxy:
     build: .
-    ports:
-      - "80:80"
-      - "443:443"
+    container_name: "reverse_proxy"
+    restart: always
     volumes:
       - ./config/:/etc/nginx/conf.d/
       - ./ssl/:/etc/ssl/
       - ./logs/:/var/log/nginx/
-      
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - reverse-proxy-network
+      - default
+
 networks:
-  docker-access-route-network:
+  reverse-proxy-network:
     external: true
