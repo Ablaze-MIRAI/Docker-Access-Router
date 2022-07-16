@@ -9,8 +9,8 @@ HTTPリクエスト等をリバースプロキシを使い複数のコンテナ�
 ### 1. リポジトリのクローン
 
 ```
-git clone [REPO]
-cd [REPO]
+git clone https://github.com/Ablaze-MIRAI/Docker-Access-Router.git
+cd Docker-Access-Router
 ```
 
 ### 2. ネットワークの作成と接続
