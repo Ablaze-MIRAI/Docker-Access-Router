@@ -1,4 +1,4 @@
-*
+*.conf
 
 !.gitignore
-!sample.conf
+!default.conf.sample
