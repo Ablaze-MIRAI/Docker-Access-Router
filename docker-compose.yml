@@ -5,11 +5,8 @@ services:
     build: .
     container_name: "ReverseProxy"
     restart: always
-    net: host
+    network_mode: "host"
     volumes:
       - ./config/:/etc/nginx/conf.d/
       - ./ssl/:/etc/ssl/
       - ./logs/:/var/log/nginx/
-    ports:
-      - "80:80"
-      - "443:443"
