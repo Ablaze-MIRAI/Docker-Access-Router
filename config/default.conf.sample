@@ -1,4 +1,10 @@
 server {
+    listen       80  default_server;
+    server_name  _;
+    return       444;
+}
+
+server {
     listen 80;
     server_name  example.net;
     location / {
