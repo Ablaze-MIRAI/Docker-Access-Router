@@ -3,8 +3,9 @@ version: "3"
 services:
   reverse_proxy:
     build: .
-    container_name: "reverse_proxy"
+    container_name: "ReverseProxy"
     restart: always
+    net: host
     volumes:
       - ./config/:/etc/nginx/conf.d/
       - ./ssl/:/etc/ssl/
@@ -12,10 +13,3 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    networks:
-      - reverse-proxy-network
-      - default
-
-networks:
-  reverse-proxy-network:
-    external: true
